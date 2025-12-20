@@ -24,19 +24,19 @@ def saving_with_raise():
     rate = return_rate / 12
     
     # Initiate previous month contribution
-    mon_check = 0
+    total_savings = 0
     
     # initiate months count
     months = 0
     
     # Iterate over if the monthly contributions is still lower than target savings while adding months
-    while mon_check < target_saving:
-        mon_check += (mon_check * rate) + monthly
+    while total_savings < target_saving:
+        total_savings += (total_savings * rate) + monthly
         months += 1
         
-        # Check after every six months then raise the salary 
+        # After every six months raise salary according to % increase 
         if months % 6 == 0:
-            mon_check = (mon_check * sal_raise) + mon_check
+            monthly = monthly * (1 + sal_raise)
     
     # Return no. of months
     return months
