@@ -58,8 +58,6 @@ def choosing_interest_rate():
         # Safely break the loop if steps exceeds 100
         if steps >= 100:
             break
-        
-    print("Best savings rate: ", rate)
     
     print("Steps in bisection search: ", steps)
     
